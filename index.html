@@ -1,0 +1,1728 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080512">
+<title>Northstar Digital | Digital Experiences Beyond Ordinary</title>
+<meta name="description" content="Northstar Digital creates modern websites, website redesigns and forward-looking digital experiences for businesses worldwide.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#080512;
+  --bg2:#10091e;
+  --panel:#171027;
+  --purple:#a16aff;
+  --violet:#713cff;
+  --pink:#e49aff;
+  --blue:#75a5ff;
+  --white:#fbf8ff;
+  --muted:#aaa0bd;
+  --line:rgba(196,160,255,.17);
+  --max:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--white);
+  font-family:"DM Sans",sans-serif;
+  overflow-x:hidden;
+}
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-2;
+  pointer-events:none;
+  opacity:.2;
+  background-image:radial-gradient(#cbb1ff 1px,transparent 1px);
+  background-size:75px 75px;
+}
+a{color:inherit;text-decoration:none}
+button,input,textarea,select{font:inherit}
+button{cursor:pointer}
+.container{width:min(var(--max),calc(100% - 44px));margin:auto}
+.section{padding:115px 0;position:relative}
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  color:#c7a7ff;
+  text-transform:uppercase;
+  letter-spacing:2.5px;
+  font-size:10px;
+  font-weight:700;
+  margin-bottom:19px;
+}
+.eyebrow:before{content:"";width:27px;height:1px;background:var(--purple)}
+h1,h2,h3,h4{font-family:"Space Grotesk",sans-serif;letter-spacing:-1px}
+h2{font-size:clamp(35px,5vw,60px);line-height:1.08}
+h3{line-height:1.2}
+.gradient-text{
+  background:linear-gradient(100deg,#fff,#d8bdff 38%,#a36aff 75%,#e8a5ff);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+.section-intro{
+  max-width:740px;
+  color:var(--muted);
+  font-size:15px;
+  line-height:1.95;
+  margin-top:20px;
+}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:14px 22px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  color:white;
+  font-size:12px;
+  font-weight:700;
+  background:rgba(255,255,255,.035);
+  transition:.35s;
+}
+.btn:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 40px rgba(147,88,255,.3);
+  border-color:rgba(190,145,255,.6);
+}
+.btn-primary{
+  border:0;
+  background:linear-gradient(110deg,#7541e8,#a45dff 55%,#d477ed);
+  box-shadow:0 10px 35px rgba(128,67,239,.3);
+}
+.pill{
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:8px 13px;
+  color:#cfc1e8;
+  font-size:10px;
+  background:rgba(255,255,255,.035);
+}
+.grid{display:grid;gap:22px}
+.card{
+  border:1px solid var(--line);
+  border-radius:23px;
+  background:linear-gradient(145deg,rgba(35,24,58,.87),rgba(14,10,27,.92));
+  padding:29px;
+  position:relative;
+  overflow:hidden;
+  transition:border-color .4s,box-shadow .4s,transform .4s;
+  transform-style:preserve-3d;
+}
+.card:before{
+  content:"";
+  position:absolute;
+  width:180px;height:180px;
+  right:-100px;top:-100px;
+  background:radial-gradient(circle,rgba(162,102,255,.18),transparent 70%);
+  pointer-events:none;
+}
+.card:hover{
+  transform:translateY(-9px) rotateX(2deg);
+  border-color:rgba(181,132,255,.55);
+  box-shadow:0 20px 55px rgba(95,48,170,.19);
+}
+.card p{
+  color:var(--muted);
+  line-height:1.85;
+  font-size:13px;
+}
+.card h3{font-size:21px;margin:17px 0 12px}
+.icon-box{
+  width:48px;height:48px;
+  border-radius:15px;
+  display:grid;place-items:center;
+  color:#e1caff;font-size:22px;
+  background:linear-gradient(145deg,rgba(155,95,255,.25),rgba(102,64,192,.08));
+  border:1px solid rgba(190,150,255,.2);
+}
+.topbar{
+  position:fixed;z-index:1000;
+  top:0;left:0;width:100%;
+  background:rgba(9,6,19,.78);
+  backdrop-filter:blur(22px);
+  border-bottom:1px solid rgba(190,150,255,.1);
+}
+.nav{
+  min-height:78px;
+  display:flex;align-items:center;
+  justify-content:space-between;gap:20px;
+}
+.brand{
+  display:flex;align-items:center;gap:11px;
+  font-family:"Space Grotesk";font-weight:700;
+  font-size:13px;letter-spacing:.5px;
+}
+.brand-mark{
+  width:39px;height:39px;
+  border-radius:13px;
+  display:grid;place-items:center;
+  font-size:23px;
+  background:linear-gradient(145deg,#a76bff,#6032cb);
+  box-shadow:0 0 25px rgba(142,83,255,.4);
+}
+.brand small{
+  display:block;
+  font:500 8px "DM Sans";
+  letter-spacing:3px;
+  color:#b8a5d5;margin-top:3px;
+}
+.nav-links{display:flex;align-items:center;gap:19px}
+.nav-links a{
+  font-size:11px;
+  color:#c9c0d8;
+  transition:.25s;
+}
+.nav-links a:hover,.nav-links a.active{color:#d4b6ff}
+.menu-toggle{display:none;background:none;color:white;border:0;font-size:26px}
+.scroll-progress{
+  height:2px;width:0;
+  position:absolute;bottom:-1px;left:0;
+  background:linear-gradient(90deg,#7841e9,#e29bff);
+  box-shadow:0 0 12px #a66bff;
+}
+.hero{
+  min-height:850px;
+  padding:155px 0 100px;
+  display:flex;align-items:center;
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(ellipse at 70% 45%,rgba(90,44,173,.15),transparent 42%),
+    radial-gradient(ellipse at 10% 15%,rgba(117,52,195,.12),transparent 38%);
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  align-items:center;gap:35px;
+}
+.hero h1{font-size:clamp(49px,7vw,86px);line-height:.99}
+.hero-copy{
+  color:#b8adc9;
+  line-height:1.9;
+  font-size:15px;
+  max-width:570px;
+  margin:27px 0 30px;
+}
+.hero-actions{display:flex;gap:13px;flex-wrap:wrap}
+.hero-tags{display:flex;gap:9px;flex-wrap:wrap;margin-top:34px}
+.hero-visual{
+  height:530px;
+  position:relative;
+  display:grid;place-items:center;
+  perspective:1000px;
+  transform-style:preserve-3d;
+}
+.space-glow{
+  position:absolute;
+  width:440px;height:440px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(119,64,255,.33),rgba(74,36,143,.1) 48%,transparent 72%);
+  filter:blur(10px);
+  animation:pulse 5s ease-in-out infinite;
+}
+.planet{
+  width:245px;height:245px;
+  border-radius:50%;
+  position:relative;z-index:2;
+  background:radial-gradient(circle at 32% 28%,#d8b6ff 0,#9c65e9 17%,#5630a7 44%,#1b1641 72%,#080713 100%);
+  box-shadow:
+    inset -28px -20px 55px #05030d,
+    inset 10px 8px 28px rgba(255,255,255,.3),
+    0 0 75px rgba(140,83,255,.4);
+  animation:float 7s ease-in-out infinite;
+}
+.planet:after{
+  content:"";position:absolute;
+  inset:20px -52px;
+  border:2px solid rgba(214,178,255,.65);
+  border-radius:50%;
+  transform:rotate(-24deg) scaleY(.32);
+  box-shadow:0 0 15px rgba(185,139,255,.45);
+}
+.orbit{
+  position:absolute;
+  width:390px;height:390px;
+  border:1px solid rgba(183,143,255,.25);
+  border-radius:50%;
+  transform:rotateX(68deg) rotateZ(-22deg);
+  animation:orbitSpin 24s linear infinite;
+}
+.orbit.two{
+  width:470px;height:470px;
+  transform:rotateX(72deg) rotateZ(35deg);
+  animation-duration:34s;
+}
+.orbit:after{
+  content:"";position:absolute;
+  width:10px;height:10px;border-radius:50%;
+  background:#d9b8ff;
+  box-shadow:0 0 20px 7px rgba(171,104,255,.65);
+  top:15%;left:15%;
+}
+.crystal{
+  position:absolute;z-index:3;
+  width:74px;height:112px;
+  right:7%;bottom:12%;
+  background:linear-gradient(135deg,rgba(224,195,255,.8),rgba(112,64,221,.1) 45%,rgba(178,122,255,.45));
+  clip-path:polygon(50% 0,100% 32%,78% 100%,20% 90%,0 27%);
+  filter:drop-shadow(0 0 22px rgba(165,105,255,.5));
+  animation:float 6s ease-in-out infinite reverse;
+}
+.crystal.small{width:39px;height:65px;left:9%;right:auto;bottom:20%}
+.hero-label{
+  position:absolute;z-index:4;
+  bottom:5%;left:0;
+  padding:14px 17px;
+  border:1px solid var(--line);
+  border-radius:15px;
+  background:rgba(17,11,31,.8);
+  font-size:10px;color:#c8b8e3;
+  backdrop-filter:blur(15px);
+}
+.hero-label strong{display:block;color:white;font-size:13px;margin-bottom:4px}
+.star{
+  position:absolute;width:3px;height:3px;
+  border-radius:50%;background:#fff;
+  box-shadow:0 0 12px 3px #b88aff;
+  animation:twinkle 3s infinite alternate;
+}
+.hero-bottom{
+  position:absolute;bottom:22px;left:50%;
+  transform:translateX(-50%);
+  color:#887b9e;font-size:9px;letter-spacing:3px;
+}
+.marquee{
+  padding:23px 0;
+  border-block:1px solid var(--line);
+  overflow:hidden;
+}
+.marquee-track{
+  display:flex;justify-content:space-around;gap:35px;
+  white-space:nowrap;color:#887b9e;
+  font:600 10px "Space Grotesk";letter-spacing:3px;
+}
+.marquee-track span:before{content:"✦";color:#a976ff;margin-right:25px}
+.split{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:65px;align-items:center;
+}
+.feature-visual{
+  min-height:390px;
+  border:1px solid var(--line);
+  border-radius:28px;
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(circle at 50% 48%,rgba(143,83,255,.25),transparent 40%),
+    linear-gradient(145deg,#1c1231,#0c0918);
+  transform-style:preserve-3d;
+}
+.feature-visual:before,.feature-visual:after{
+  content:"";position:absolute;
+  border:1px solid rgba(186,143,255,.28);
+  border-radius:50%;width:300px;height:300px;
+  left:50%;top:50%;
+  transform:translate(-50%,-50%) rotateX(65deg);
+}
+.feature-visual:after{
+  width:390px;height:390px;
+  transform:translate(-50%,-50%) rotateX(70deg) rotateZ(40deg);
+}
+.feature-core{
+  position:absolute;left:50%;top:50%;
+  transform:translate(-50%,-50%);
+  width:130px;height:130px;border-radius:35px;
+  display:grid;place-items:center;font-size:50px;
+  background:linear-gradient(145deg,#a978ff,#5427b5);
+  box-shadow:0 0 70px rgba(142,82,255,.55);
+  animation:float 5s ease-in-out infinite;
+}
+.service-grid{grid-template-columns:repeat(3,1fr);margin-top:42px}
+.service-card{min-height:260px}
+.card-link{
+  display:inline-block;margin-top:18px;
+  color:#c6a2ff;font-size:11px;font-weight:700;
+}
+.industry-grid{grid-template-columns:repeat(4,1fr);margin-top:40px}
+.industry-card{padding:22px;min-height:160px}
+.industry-card h3{font-size:16px;margin:14px 0 7px}
+.industry-card p{font-size:11px}
+.portfolio-grid{grid-template-columns:repeat(2,1fr);margin-top:42px}
+.project-art{
+  height:230px;border-radius:16px;
+  margin-bottom:20px;overflow:hidden;
+  position:relative;border:1px solid var(--line);
+  transition:transform .6s;
+}
+.project-card:hover .project-art{transform:scale(.98)}
+.project-art.one{background:radial-gradient(circle at 70% 30%,#a06cff,transparent 25%),linear-gradient(135deg,#17132c,#30205c,#0c0a18)}
+.project-art.two{background:radial-gradient(circle at 30% 40%,#ff9bd8,transparent 25%),linear-gradient(135deg,#20102e,#56306e,#100b1c)}
+.project-art.three{background:radial-gradient(circle at 60% 60%,#59b9ff,transparent 27%),linear-gradient(135deg,#101e35,#233c69,#080d1b)}
+.project-art.four{background:radial-gradient(circle at 40% 30%,#e5b2ff,transparent 22%),linear-gradient(135deg,#27153b,#5b327c,#10091d)}
+.project-art:before{
+  content:"";position:absolute;
+  width:190px;height:190px;
+  border:1px solid rgba(255,255,255,.35);
+  border-radius:50%;left:50%;top:50%;
+  transform:translate(-50%,-50%) rotateX(65deg);
+  box-shadow:0 0 50px rgba(190,145,255,.18);
+}
+.project-art:after{
+  content:"";position:absolute;
+  width:90px;height:90px;border-radius:25px;
+  left:50%;top:50%;
+  transform:translate(-50%,-50%) rotate(25deg);
+  background:linear-gradient(145deg,rgba(255,255,255,.6),rgba(161,111,255,.1));
+  box-shadow:0 0 50px rgba(190,140,255,.4);
+}
+.project-type{
+  font-size:9px;color:#bca2e5;
+  letter-spacing:2px;text-transform:uppercase;
+}
+.project-card h3{margin:9px 0;font-size:22px}
+.process-grid{grid-template-columns:repeat(3,1fr);margin-top:43px}
+.step-number{font:700 35px "Space Grotesk";color:#a77aff}
+.value-grid{grid-template-columns:repeat(3,1fr);margin-top:38px}
+.quote-panel{
+  padding:55px;
+  border:1px solid var(--line);
+  border-radius:28px;
+  background:radial-gradient(ellipse at 85% 10%,rgba(143,79,255,.2),transparent 40%),#130d22;
+  text-align:center;
+}
+.quote-panel h2{max-width:850px;margin:auto}
+.faq-list{max-width:850px;margin:40px auto 0}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-question{
+  width:100%;display:flex;
+  justify-content:space-between;
+  align-items:center;gap:20px;
+  padding:22px 4px;background:none;
+  border:0;color:white;text-align:left;font-weight:600;
+}
+.faq-question span:last-child{color:#b98aff;font-size:22px}
+.faq-answer{
+  display:none;padding:0 35px 22px 4px;
+  color:var(--muted);font-size:13px;line-height:1.9;
+}
+.faq-item.open .faq-answer{display:block}
+.contact-grid{
+  display:grid;grid-template-columns:.8fr 1.2fr;
+  gap:35px;margin-top:45px;
+}
+.contact-info,.contact-form{
+  padding:30px;border:1px solid var(--line);
+  border-radius:22px;background:rgba(24,16,43,.8);
+}
+.contact-info p{color:var(--muted);line-height:1.8;font-size:13px;margin:13px 0 25px}
+.contact-detail{
+  padding:15px 0;border-top:1px solid var(--line);
+  font-size:12px;color:#d9c8f2;line-height:1.8;
+}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field{margin-bottom:15px}
+.field label{display:block;font-size:10px;color:#c9b8e4;margin-bottom:8px}
+.field input,.field textarea,.field select{
+  width:100%;padding:14px 15px;
+  border-radius:12px;border:1px solid var(--line);
+  background:rgba(5,3,13,.55);color:white;outline:none;
+}
+.field input:focus,.field textarea:focus,.field select:focus{border-color:#9d65ff}
+.field textarea{min-height:120px;resize:vertical}
+.field select option{background:#130d22}
+.footer{
+  padding:55px 0 25px;
+  border-top:1px solid var(--line);
+  background:rgba(5,3,12,.5);
+}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:35px}
+.footer p{color:var(--muted);font-size:12px;line-height:1.8;margin-top:15px;max-width:300px}
+.footer h4{font-size:12px;margin-bottom:17px}
+.footer a{display:block;color:#a99bbd;font-size:11px;margin:12px 0}
+.footer a:hover{color:#d5baff}
+.footer-bottom{
+  border-top:1px solid var(--line);
+  margin-top:40px;padding-top:20px;
+  display:flex;justify-content:space-between;
+  color:#81758f;font-size:10px;
+}
+.page{display:none;min-height:70vh;padding-top:110px}
+.page.active{display:block;animation:pageIn .6s ease}
+.page-hero{
+  padding:70px 0 60px;
+  border-bottom:1px solid var(--line);
+  position:relative;overflow:hidden;
+}
+.page-hero:after{
+  content:"✦";position:absolute;
+  right:5%;top:5%;font-size:190px;
+  color:rgba(153,103,255,.055);
+  animation:slowSpin 30s linear infinite;
+}
+.page-hero h1{
+  font-size:clamp(42px,6vw,72px);
+  max-width:900px;line-height:1.02;
+}
+.page-content{padding:70px 0 105px}
+.detail-grid{grid-template-columns:repeat(2,1fr);margin-top:30px}
+.detail-block{
+  padding:30px;border:1px solid var(--line);
+  border-radius:20px;background:rgba(24,16,43,.8);
+  transition:.35s;
+}
+.detail-block:hover{border-color:rgba(178,130,255,.5);transform:translateY(-5px)}
+.detail-block h3{font-size:22px;margin-bottom:13px}
+.detail-block p,.long-copy{
+  font-size:13px;line-height:1.95;color:var(--muted);
+}
+.detail-block ul{
+  padding-left:18px;color:var(--muted);
+  font-size:12px;line-height:2.1;margin-top:13px;
+}
+.page-cta{margin-top:45px}
+.founder-card{
+  display:grid;grid-template-columns:.7fr 1.3fr;
+  gap:35px;align-items:center;
+  padding:35px;border:1px solid var(--line);
+  border-radius:25px;background:linear-gradient(135deg,#1d1231,#100a1d);
+}
+.founder-symbol{
+  width:170px;height:170px;border-radius:50%;
+  margin:auto;display:grid;place-items:center;
+  font-size:65px;
+  background:radial-gradient(circle at 30% 25%,#d6b6ff,#8a51e7 40%,#29145a 75%);
+  box-shadow:0 0 60px rgba(155,99,255,.3);
+}
+.founder-card h3{font-size:32px;margin:10px 0}
+.founder-role{font-size:10px;letter-spacing:2px;color:#c5a4ff;text-transform:uppercase}
+.timeline{border-left:1px solid rgba(173,130,255,.35);margin:35px 0 0 10px;padding-left:30px}
+.timeline-item{position:relative;margin:0 0 32px}
+.timeline-item:before{
+  content:"";position:absolute;
+  left:-36px;top:5px;width:10px;height:10px;
+  border-radius:50%;background:#a875ff;
+  box-shadow:0 0 15px #a875ff;
+}
+.timeline-item h3{font-size:19px;margin-bottom:8px}
+.timeline-item p{color:var(--muted);font-size:13px;line-height:1.9}
+.chat-launch{
+  position:fixed;right:25px;bottom:25px;z-index:900;
+  width:58px;height:58px;border:0;border-radius:50%;
+  color:white;font-size:23px;
+  background:linear-gradient(145deg,#a56aff,#6434d2);
+  box-shadow:0 8px 35px rgba(131,70,239,.45);
+}
+.chat-panel{
+  position:fixed;right:25px;bottom:95px;z-index:900;
+  width:min(360px,calc(100% - 30px));
+  border:1px solid var(--line);border-radius:20px;
+  overflow:hidden;background:#100a1d;
+  box-shadow:0 20px 80px rgba(0,0,0,.55);
+  display:none;
+}
+.chat-panel.show{display:block;animation:rise .25s ease}
+.chat-head{
+  padding:17px;background:linear-gradient(100deg,#5830a6,#8c50d9);
+  font-weight:700;font-size:13px;
+}
+.chat-head small{display:block;font-size:10px;font-weight:400;opacity:.8;margin-top:4px}
+.chat-messages{
+  height:270px;overflow:auto;padding:15px;
+  display:flex;flex-direction:column;gap:10px;
+}
+.chat-message{
+  padding:11px 13px;border-radius:13px;
+  background:#211632;color:#e6dcf4;
+  font-size:11px;line-height:1.6;max-width:90%;
+}
+.chat-message.user{align-self:flex-end;background:#6136a8}
+.chat-input{display:flex;padding:12px;border-top:1px solid var(--line);gap:8px}
+.chat-input input{
+  flex:1;min-width:0;border:1px solid var(--line);
+  border-radius:10px;background:#090613;color:white;padding:11px;
+}
+.chat-input button{border:0;border-radius:10px;background:#8650df;color:white;padding:0 15px}
+
+/* ANIMATIONS */
+@keyframes float{
+  0%,100%{translate:0 0;rotate:-3deg}
+  50%{translate:0 -18px;rotate:3deg}
+}
+@keyframes orbitSpin{
+  from{transform:rotateX(68deg) rotateZ(-22deg)}
+  to{transform:rotateX(68deg) rotateZ(338deg)}
+}
+@keyframes pulse{0%,100%{opacity:.6;scale:.94}50%{opacity:1;scale:1.08}}
+@keyframes twinkle{from{opacity:.25;scale:.7}to{opacity:1;scale:1.4}}
+@keyframes rise{from{opacity:0;translate:0 12px}to{opacity:1;translate:0 0}}
+@keyframes pageIn{from{opacity:0;translate:0 15px;filter:blur(5px)}to{opacity:1;translate:0 0;filter:blur(0)}}
+@keyframes slowSpin{to{rotate:360deg}}
+
+/* RESPONSIVE */
+@media(max-width:950px){
+  .nav-links{gap:11px}
+  .nav-links a{font-size:10px}
+  .hero-grid{grid-template-columns:1fr .9fr}
+  .service-grid{grid-template-columns:repeat(2,1fr)}
+  .industry-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:720px){
+  .container{width:calc(100% - 32px)}
+  .section{padding:80px 0}
+  .menu-toggle{display:block}
+  .nav-links{
+    display:none;position:absolute;top:78px;left:0;width:100%;
+    padding:20px 25px;background:rgba(10,6,21,.98);
+    border-bottom:1px solid var(--line);
+    flex-direction:column;align-items:flex-start;
+  }
+  .nav-links.open{display:flex}
+  .nav-links a{font-size:14px;padding:6px 0}
+  .nav .btn{display:none}
+  .hero{padding:130px 0 90px;min-height:auto}
+  .hero-grid,.split,.contact-grid,.founder-card{grid-template-columns:1fr}
+  .hero h1{font-size:clamp(46px,13vw,67px)}
+  .hero-visual{height:390px}
+  .planet{width:190px;height:190px}
+  .orbit{width:310px;height:310px}
+  .orbit.two{width:370px;height:370px}
+  .service-grid,.portfolio-grid,.process-grid,.value-grid,.detail-grid{grid-template-columns:1fr}
+  .industry-grid{grid-template-columns:repeat(2,1fr)}
+  .split{gap:30px}
+  .feature-visual{min-height:300px}
+  .quote-panel{padding:35px 22px}
+  .form-row{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:25px}
+  .footer-bottom{gap:12px;flex-direction:column}
+  .founder-symbol{width:125px;height:125px;font-size:48px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    scroll-behavior:auto!important;
+    animation-duration:.01ms!important;
+    transition-duration:.01ms!important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<header class="topbar">
+  <div class="container nav">
+    <a class="brand" href="#home">
+      <span class="brand-mark">✦</span>
+      <span>NORTHSTAR DIGITAL<small>BEYOND THE ORDINARY</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">☰</button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" data-route="home">Home</a>
+      <a href="#about" data-route="about">About</a>
+      <a href="#services" data-route="services">Services</a>
+      <a href="#industries" data-route="industries">Industries</a>
+      <a href="#portfolio" data-route="portfolio">Portfolio</a>
+      <a href="#process" data-route="process">Process</a>
+      <a href="#insights" data-route="insights">Insights</a>
+      <a href="#contact" data-route="contact">Contact</a>
+    </nav>
+    <a class="btn btn-primary" href="#contact">Start a project ↗</a>
+  </div>
+</header>
+
+<main>
+
+<!-- HOME PAGE -->
+<div class="page active" id="home">
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="reveal">
+      <div class="eyebrow">A new perspective on digital</div>
+      <h1>Digital experiences.<br><span class="gradient-text">Beyond ordinary.</span></h1>
+      <p class="hero-copy">
+        We create modern websites and thoughtful digital experiences
+        that help ambitious businesses present their ideas with
+        clarity, confidence and distinction.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#contact">Let's build something ↗</a>
+        <a class="btn" href="#services">Explore our services ↓</a>
+      </div>
+      <div class="hero-tags">
+        <span class="pill">Website design</span>
+        <span class="pill">Website redesign</span>
+        <span class="pill">Digital experiences</span>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal" id="heroVisual">
+      <div class="space-glow"></div>
+      <div class="orbit"></div>
+      <div class="orbit two"></div>
+      <div class="planet"></div>
+      <div class="crystal"></div>
+      <div class="crystal small"></div>
+      <div class="hero-label">
+        <strong>Ideas into experiences</strong>
+        Designed with intention. Built for people.
+      </div>
+    </div>
+  </div>
+  <div class="hero-bottom">SCROLL TO EXPLORE ↓</div>
+</section>
+
+<div class="marquee">
+  <div class="container marquee-track">
+    <span>CREATIVE THINKING</span>
+    <span>MODERN DESIGN</span>
+    <span>RESPONSIVE EXPERIENCES</span>
+    <span>FORWARD-LOOKING IDEAS</span>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container split">
+    <div class="reveal">
+      <div class="eyebrow">01 / Our introduction</div>
+      <h2>A digital presence should be more than <span class="gradient-text">a website.</span></h2>
+      <p class="section-intro">
+        A website is often one of the first places where someone
+        encounters a business. It introduces the brand, communicates
+        its purpose and helps visitors understand what makes it
+        relevant to them.
+      </p>
+      <p class="section-intro">
+        At Northstar Digital, we focus on creating modern website
+        experiences that combine visual presentation, organised
+        information and meaningful interactions.
+      </p>
+      <div style="margin-top:28px">
+        <a class="btn" href="#about">Discover our company ↗</a>
+      </div>
+    </div>
+    <div class="feature-visual reveal"><div class="feature-core">✦</div></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="eyebrow">02 / What we do</div>
+    <h2>Digital services with <span class="gradient-text">purpose.</span></h2>
+    <p class="section-intro">
+      Each service addresses a different part of a business's digital
+      presence. We begin by understanding the objective before
+      deciding what type of solution may be appropriate.
+    </p>
+    <div class="grid service-grid">
+      <article class="card service-card reveal">
+        <div class="icon-box">✧</div>
+        <h3>Website Design</h3>
+        <p>Creating a new website experience with an intentional visual direction, clear structure and content that explains the business.</p>
+        <a class="card-link" href="#services">Understand this service ↗</a>
+      </article>
+      <article class="card service-card reveal">
+        <div class="icon-box">◈</div>
+        <h3>Website Redesign</h3>
+        <p>Reviewing an existing website and exploring ways to improve its appearance, organisation, navigation and overall experience.</p>
+        <a class="card-link" href="#services">Understand this service ↗</a>
+      </article>
+      <article class="card service-card reveal">
+        <div class="icon-box">⌘</div>
+        <h3>Responsive Design</h3>
+        <p>Planning layouts that adapt to mobile phones, tablets and desktop screens while keeping content readable and accessible.</p>
+        <a class="card-link" href="#services">Understand this service ↗</a>
+      </article>
+      <article class="card service-card reveal">
+        <div class="icon-box">◎</div>
+        <h3>UI & UX Thinking</h3>
+        <p>Organising navigation, page hierarchy and interactions so visitors can understand the website and find relevant information.</p>
+        <a class="card-link" href="#services">Understand this service ↗</a>
+      </article>
+      <article class="card service-card reveal">
+        <div class="icon-box">✺</div>
+        <h3>Digital Experiences</h3>
+        <p>Exploring motion, visual storytelling and interactive details that support the personality and purpose of a website.</p>
+        <a class="card-link" href="#services">Understand this service ↗</a>
+      </article>
+      <article class="card service-card reveal">
+        <div class="icon-box">✧</div>
+        <h3>AI-Powered Concepts</h3>
+        <p>Exploring ways AI could support conversational interfaces, information discovery and customer-facing website experiences.</p>
+        <a class="card-link" href="#services">Understand this service ↗</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="eyebrow">03 / Industries</div>
+    <h2>Different industries.<br><span class="gradient-text">Different possibilities.</span></h2>
+    <p class="section-intro">
+      Every industry has its own audience, information needs and
+      business priorities. A website should reflect those differences
+      rather than use the same structure for every organisation.
+    </p>
+    <div class="grid industry-grid">
+      <article class="card industry-card reveal"><div class="icon-box">⌘</div><h3>Technology</h3><p>Product presentations, software services and technical explanations.</p></article>
+      <article class="card industry-card reveal"><div class="icon-box">⌂</div><h3>Real Estate</h3><p>Property showcases, development information and enquiries.</p></article>
+      <article class="card industry-card reveal"><div class="icon-box">✚</div><h3>Healthcare</h3><p>Service information, practice introductions and accessible content.</p></article>
+      <article class="card industry-card reveal"><div class="icon-box">▤</div><h3>Education</h3><p>Programmes, learning resources and course information.</p></article>
+      <article class="card industry-card reveal"><div class="icon-box">◇</div><h3>E-commerce</h3><p>Product discovery, category organisation and shopping experiences.</p></article>
+      <article class="card industry-card reveal"><div class="icon-box">▣</div><h3>Professional Services</h3><p>Expertise, services and business enquiries.</p></article>
+      <article class="card industry-card reveal"><div class="icon-box">✦</div><h3>Hospitality</h3><p>Experiences, accommodation and visitor information.</p></article>
+      <article class="card industry-card reveal"><div class="icon-box">↗</div><h3>Startups</h3><p>Brand introductions, product explanations and digital foundations.</p></article>
+    </div>
+    <div style="margin-top:25px"><a class="btn" href="#industries">Explore industries ↗</a></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="eyebrow">04 / Creative concepts</div>
+    <h2>Exploring what digital <span class="gradient-text">can become.</span></h2>
+    <p class="section-intro">
+      These illustrative concepts demonstrate possible creative
+      directions. They are design explorations, not completed
+      client projects or customer case studies.
+    </p>
+    <div class="grid portfolio-grid">
+      <article class="card project-card reveal"><div class="project-art one"></div><div class="project-type">Technology concept</div><h3>NovaTech</h3><p>A futuristic technology presentation with bold visual hierarchy and product storytelling.</p></article>
+      <article class="card project-card reveal"><div class="project-art two"></div><div class="project-type">Luxury concept</div><h3>Veloura</h3><p>An elegant digital direction with refined typography and atmospheric visuals.</p></article>
+      <article class="card project-card reveal"><div class="project-art three"></div><div class="project-type">Real estate concept</div><h3>Horizon</h3><p>A modern property presentation concept focused on clarity and discovery.</p></article>
+      <article class="card project-card reveal"><div class="project-art four"></div><div class="project-type">Creative studio concept</div><h3>Atelier</h3><p>A creative business concept with expressive layouts and a distinctive identity.</p></article>
+    </div>
+    <div style="margin-top:25px"><a class="btn" href="#portfolio">Explore portfolio ↗</a></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="eyebrow">05 / Our philosophy</div>
+    <h2>What guides <span class="gradient-text">our decisions.</span></h2>
+    <p class="section-intro">
+      Our values describe the standards we aim to follow when
+      planning projects, communicating with clients and developing
+      digital experiences.
+    </p>
+    <div class="grid value-grid">
+      <article class="card reveal"><div class="icon-box">✦</div><h3>Innovation</h3><p>Remaining curious about new ideas and exploring tools that may improve digital experiences.</p></article>
+      <article class="card reveal"><div class="icon-box">◇</div><h3>Quality</h3><p>Giving attention to detail, structure, usability and the consistency of the final experience.</p></article>
+      <article class="card reveal"><div class="icon-box">◎</div><h3>Transparency</h3><p>Communicating clearly about project scope, expectations, timelines and limitations.</p></article>
+      <article class="card reveal"><div class="icon-box">♡</div><h3>Customer Focus</h3><p>Understanding the client's goals and considering the people who will use the website.</p></article>
+      <article class="card reveal"><div class="icon-box">✧</div><h3>Creativity</h3><p>Exploring original visual directions while keeping the purpose of the website in focus.</p></article>
+      <article class="card reveal"><div class="icon-box">⌘</div><h3>Clarity</h3><p>Making information easier to understand through organised content and useful navigation.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="eyebrow">06 / Our approach</div>
+    <h2>A clear process from <span class="gradient-text">idea to launch.</span></h2>
+    <p class="section-intro">
+      A structured process helps everyone understand what happens
+      next, what information is needed and when feedback is important.
+    </p>
+    <div class="grid process-grid">
+      <article class="card reveal"><div class="step-number">01</div><h3>Discover</h3><p>Understand the business, audience, project purpose and current challenges.</p></article>
+      <article class="card reveal"><div class="step-number">02</div><h3>Plan</h3><p>Organise the scope, content, pages and project priorities.</p></article>
+      <article class="card reveal"><div class="step-number">03</div><h3>Design</h3><p>Explore the visual direction, layout, typography and interactions.</p></article>
+      <article class="card reveal"><div class="step-number">04</div><h3>Build</h3><p>Translate the agreed direction into a responsive website.</p></article>
+      <article class="card reveal"><div class="step-number">05</div><h3>Review</h3><p>Check the work, gather feedback and refine agreed details.</p></article>
+      <article class="card reveal"><div class="step-number">06</div><h3>Launch</h3><p>Prepare the website for launch and confirm handover arrangements.</p></article>
+    </div>
+    <div style="margin-top:25px"><a class="btn" href="#process">See the full process ↗</a></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container quote-panel reveal">
+    <div class="eyebrow">07 / Northstar AI Assistant</div>
+    <h2>Explore a more <span class="gradient-text">intelligent experience.</span></h2>
+    <p class="section-intro" style="margin:18px auto 25px">
+      Our website includes an AI assistant demonstration to help
+      visitors explore basic information about Northstar Digital.
+      A live AI service requires a secure backend and AI provider.
+    </p>
+    <button class="btn btn-primary" onclick="toggleChat(true)">Talk to Northstar AI ↗</button>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="eyebrow">08 / Frequently asked questions</div>
+    <h2>Understand before <span class="gradient-text">you begin.</span></h2>
+    <div class="faq-list">
+      <div class="faq-item"><button class="faq-question">What does Northstar Digital do?<span>+</span></button><div class="faq-answer">Northstar Digital focuses on website design, website redesign and modern digital experiences. The exact scope of each project depends on the client's needs.</div></div>
+      <div class="faq-item"><button class="faq-question">What is website design?<span>+</span></button><div class="faq-answer">Website design involves planning the appearance, layout, information structure and interactions of a website so it communicates a business clearly.</div></div>
+      <div class="faq-item"><button class="faq-question">What is website redesign?<span>+</span></button><div class="faq-answer">A redesign reviews an existing website and considers how its visual presentation, structure, navigation and user experience might be improved.</div></div>
+      <div class="faq-item"><button class="faq-question">Will my website work on mobile devices?<span>+</span></button><div class="faq-answer">Responsive design is part of our design approach. The intended layout should adapt to mobile, tablet and desktop screens.</div></div>
+      <div class="faq-item"><button class="faq-question">How much does a website cost?<span>+</span></button><div class="faq-answer">Pricing depends on the number of pages, design complexity, functionality, content requirements and project scope. Contact us for a discussion.</div></div>
+      <div class="faq-item"><button class="faq-question">How long does a project take?<span>+</span></button><div class="faq-answer">Timelines depend on complexity, content readiness, feedback and required functionality. A realistic timeline should be discussed before work begins.</div></div>
+      <div class="faq-item"><button class="faq-question">Is the AI assistant fully connected?<span>+</span></button><div class="faq-answer">The current website assistant is a demonstration with sample responses. A live AI assistant requires a secure backend and AI provider integration.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container quote-panel reveal">
+    <div class="eyebrow">09 / Start a conversation</div>
+    <h2>Let's create something <span class="gradient-text">meaningful.</span></h2>
+    <p class="section-intro" style="margin:18px auto 25px">
+      Have an idea for a new website, or an existing website
+      that needs a different direction? Tell us about it.
+    </p>
+    <a class="btn btn-primary" href="#contact">Start your project ↗</a>
+  </div>
+</section>
+
+</div>
+
+<!-- ABOUT PAGE -->
+<div class="page" id="about">
+  <div class="container page-hero">
+    <div class="eyebrow">About Northstar Digital</div>
+    <h1>Our ambition.<br><span class="gradient-text">Our direction.</span></h1>
+    <p class="section-intro">
+      An emerging digital agency built around modern website design,
+      creative thinking and forward-looking digital solutions.
+    </p>
+  </div>
+
+  <div class="container page-content">
+    <div class="split">
+      <div class="reveal">
+        <div class="eyebrow">Our story</div>
+        <h2>Every meaningful journey begins with <span class="gradient-text">a direction.</span></h2>
+        <p class="section-intro">
+          Northstar Digital was created around the idea that a
+          business's online presence should communicate its value
+          with clarity and confidence.
+        </p>
+        <p class="section-intro">
+          We are an emerging agency focused on website design,
+          website redesign and modern digital experiences. Our
+          approach is centred on understanding the purpose of a
+          project before choosing its design direction.
+        </p>
+      </div>
+      <div class="feature-visual reveal"><div class="feature-core">✦</div></div>
+    </div>
+
+    <div class="eyebrow" style="margin-top:90px">Leadership</div>
+    <div class="founder-card reveal">
+      <div class="founder-symbol">✦</div>
+      <div>
+        <div class="founder-role">CEO & Founder</div>
+        <h3>Saurabh Ghosh</h3>
+        <p class="long-copy">
+          Saurabh Ghosh is the CEO and Founder of Northstar Digital,
+          building an international digital agency focused on modern
+          websites and AI-powered solutions.
+        </p>
+        <p class="long-copy" style="margin-top:13px">
+          His leadership vision is to develop a creative,
+          technology-driven agency that values innovation, quality,
+          transparency, customer satisfaction and thoughtful design.
+        </p>
+      </div>
+    </div>
+
+    <div class="eyebrow" style="margin-top:90px">Our vision and mission</div>
+    <div class="grid detail-grid">
+      <div class="detail-block reveal">
+        <h3>Our Vision</h3>
+        <p>To build a respected digital agency known for thoughtful website experiences, creative problem-solving and a forward-looking approach to technology.</p>
+      </div>
+      <div class="detail-block reveal">
+        <h3>Our Mission</h3>
+        <p>To help businesses communicate their value through clear, modern and purposeful digital experiences, while building lasting professional relationships.</p>
+      </div>
+      <div class="detail-block reveal">
+        <h3>Our Philosophy</h3>
+        <p>Technology should serve a purpose. Design should make information easier to understand. Creativity should work alongside usability.</p>
+      </div>
+      <div class="detail-block reveal">
+        <h3>Our Commitment</h3>
+        <p>We aim to communicate honestly, understand project requirements and work towards solutions that match the agreed scope.</p>
+      </div>
+    </div>
+
+    <div class="eyebrow" style="margin-top:90px">Our values</div>
+    <div class="grid value-grid">
+      <div class="card reveal"><h3>Innovation</h3><p>Exploring new possibilities and useful technologies.</p></div>
+      <div class="card reveal"><h3>Quality</h3><p>Giving attention to details and consistency.</p></div>
+      <div class="card reveal"><h3>Transparency</h3><p>Clear communication and realistic expectations.</p></div>
+      <div class="card reveal"><h3>Customer Focus</h3><p>Understanding the people and businesses we serve.</p></div>
+      <div class="card reveal"><h3>Creativity</h3><p>Developing distinctive ideas with purpose.</p></div>
+      <div class="card reveal"><h3>Responsibility</h3><p>Being clear about capabilities and commitments.</p></div>
+    </div>
+
+    <div class="page-cta"><a class="btn btn-primary" href="#contact">Connect with Northstar ↗</a></div>
+  </div>
+</div>
+
+<!-- SERVICES PAGE -->
+<div class="page" id="services">
+  <div class="container page-hero">
+    <div class="eyebrow">Our services</div>
+    <h1>Solutions designed around <span class="gradient-text">your goals.</span></h1>
+    <p class="section-intro">
+      Understand what each service means, when it may be useful
+      and the types of work it can involve.
+    </p>
+  </div>
+
+  <div class="container page-content">
+    <div class="grid detail-grid">
+      <div class="detail-block reveal">
+        <h3>01. Website Design</h3>
+        <p>Website design is the process of planning how a new website looks, communicates and guides its visitors. It includes visual direction, page structure, typography and interaction concepts.</p>
+        <ul>
+          <li>Visual direction and layout</li>
+          <li>Page hierarchy and structure</li>
+          <li>Brand-aligned presentation</li>
+          <li>Content placement</li>
+          <li>Responsive design planning</li>
+        </ul>
+        <p style="margin-top:15px"><strong>Useful when:</strong> a business needs a new digital presence or wants to introduce a new product or service.</p>
+      </div>
+
+      <div class="detail-block reveal">
+        <h3>02. Website Redesign</h3>
+        <p>A website redesign examines an existing website and explores how its presentation, structure and usability might be improved.</p>
+        <ul>
+          <li>Visual refresh</li>
+          <li>Content organisation</li>
+          <li>Navigation improvements</li>
+          <li>Responsive refinements</li>
+          <li>Updated page layouts</li>
+        </ul>
+        <p style="margin-top:15px"><strong>Useful when:</strong> a website no longer reflects the business or its information is difficult to explore.</p>
+      </div>
+
+      <div class="detail-block reveal">
+        <h3>03. Responsive Design</h3>
+        <p>Responsive design considers how website layouts adapt to different screen sizes and devices.</p>
+        <ul>
+          <li>Mobile layout planning</li>
+          <li>Tablet and desktop layouts</li>
+          <li>Readable typography</li>
+          <li>Flexible content sections</li>
+          <li>Touch-friendly interactions</li>
+        </ul>
+        <p style="margin-top:15px"><strong>Purpose:</strong> make the website comfortable to use across different devices.</p>
+      </div>
+
+      <div class="detail-block reveal">
+        <h3>04. UI and UX Thinking</h3>
+        <p>UI refers to the visual interface. UX considers the overall experience people have when navigating and using the website.</p>
+        <ul>
+          <li>Navigation planning</li>
+          <li>Page hierarchy</li>
+          <li>Interaction concepts</li>
+          <li>Information organisation</li>
+          <li>Content clarity</li>
+        </ul>
+        <p style="margin-top:15px"><strong>Purpose:</strong> make information easier to find and actions easier to understand.</p>
+      </div>
+
+      <div class="detail-block reveal">
+        <h3>05. Digital Experiences</h3>
+        <p>Digital experiences bring together visual storytelling, movement, interactions and content to create a distinctive website presentation.</p>
+        <ul>
+          <li>Motion concepts</li>
+          <li>Scroll-based animation ideas</li>
+          <li>Interactive components</li>
+          <li>Visual storytelling</li>
+          <li>Distinctive presentation</li>
+        </ul>
+        <p style="margin-top:15px"><strong>Purpose:</strong> create a more engaging and memorable digital presentation without sacrificing clarity.</p>
+      </div>
+
+      <div class="detail-block reveal">
+        <h3>06. AI-Powered Concepts</h3>
+        <p>AI-powered website concepts explore how artificial intelligence might support visitors and improve access to information.</p>
+        <ul>
+          <li>AI assistant concepts</li>
+          <li>Conversational interfaces</li>
+          <li>Content discovery ideas</li>
+          <li>Automation planning</li>
+          <li>Backend integration planning</li>
+        </ul>
+        <p style="margin-top:15px"><strong>Important:</strong> a live AI feature requires a secure backend, an AI provider and appropriate configuration.</p>
+      </div>
+    </div>
+
+    <div class="detail-block reveal" style="margin-top:35px">
+      <h3>What happens before a project begins?</h3>
+      <p>We first need to understand the business, project goals, desired pages, content requirements, functionality and expected timeline. The final scope and pricing should be agreed before work starts.</p>
+    </div>
+
+    <div class="page-cta"><a class="btn btn-primary" href="#contact">Discuss your requirements ↗</a></div>
+  </div>
+</div>
+
+<!-- INDUSTRIES PAGE -->
+<div class="page" id="industries">
+  <div class="container page-hero">
+    <div class="eyebrow">Industries</div>
+    <h1>Different businesses.<br><span class="gradient-text">Different digital needs.</span></h1>
+    <p class="section-intro">
+      Explore how a well-planned website can communicate
+      information for different types of organisations.
+    </p>
+  </div>
+
+  <div class="container page-content">
+    <div class="grid detail-grid">
+      <div class="detail-block reveal">
+        <h3>Technology and Software</h3>
+        <p>Technology businesses often need to explain products and services that may be unfamiliar to visitors. A website can organise product features, use cases, pricing information and technical explanations.</p>
+        <ul><li>Product presentation</li><li>Software service pages</li><li>Feature explanations</li><li>Demo enquiry journeys</li></ul>
+      </div>
+      <div class="detail-block reveal">
+        <h3>Real Estate</h3>
+        <p>Property businesses can use websites to present developments, properties, services and enquiry information in an organised way.</p>
+        <ul><li>Property showcases</li><li>Development information</li><li>Image galleries</li><li>Enquiry forms</li></ul>
+      </div>
+      <div class="detail-block reveal">
+        <h3>Healthcare</h3>
+        <p>Healthcare websites should make important information accessible and easy to understand, with careful attention to clarity and appropriate privacy practices.</p>
+        <ul><li>Practice introductions</li><li>Service descriptions</li><li>Appointment information</li><li>Visitor guidance</li></ul>
+      </div>
+      <div class="detail-block reveal">
+        <h3>Education</h3>
+        <p>Educational organisations may need to organise programmes, learning resources, admissions information and institutional details.</p>
+        <ul><li>Course information</li><li>Programme pages</li><li>Learning resources</li><li>Admissions information</li></ul>
+      </div>
+      <div class="detail-block reveal">
+        <h3>E-commerce and Retail</h3>
+        <p>Retail websites help visitors discover products, understand product information and move through shopping journeys.</p>
+        <ul><li>Product presentation</li><li>Category organisation</li><li>Brand storytelling</li><li>Shopping interface concepts</li></ul>
+      </div>
+      <div class="detail-block reveal">
+        <h3>Professional Services</h3>
+        <p>Consultants and professional firms can use websites to explain their services, introduce their team and provide clear enquiry routes.</p>
+        <ul><li>Service descriptions</li><li>Professional profiles</li><li>Company information</li><li>Contact journeys</li></ul>
+      </div>
+      <div class="detail-block reveal">
+        <h3>Hospitality and Tourism</h3>
+        <p>Hospitality businesses can present their experiences, accommodation, facilities and visitor information.</p>
+        <ul><li>Venue presentation</li><li>Experience information</li><li>Accommodation pages</li><li>Visitor enquiries</li></ul>
+      </div>
+      <div class="detail-block reveal">
+        <h3>Startups and Small Businesses</h3>
+        <p>New businesses often need a clear digital introduction that explains their idea, offering and next steps.</p>
+        <ul><li>Brand introductions</li><li>Product explanations</li><li>Service pages</li><li>Business enquiries</li></ul>
+      </div>
+    </div>
+    <div class="page-cta"><a class="btn btn-primary" href="#contact">Tell us about your business ↗</a></div>
+  </div>
+</div>
+
+<!-- PORTFOLIO PAGE -->
+<div class="page" id="portfolio">
+  <div class="container page-hero">
+    <div class="eyebrow">Portfolio and concept explorations</div>
+    <h1>Ideas expressed through <span class="gradient-text">design.</span></h1>
+    <p class="section-intro">
+      An illustrative collection of possible design directions.
+      These concepts are not represented as completed client
+      projects or commercial results.
+    </p>
+  </div>
+
+  <div class="container page-content">
+    <div class="grid portfolio-grid">
+      <article class="card project-card reveal">
+        <div class="project-art one"></div>
+        <div class="project-type">Technology concept</div>
+        <h3>NovaTech</h3>
+        <p><strong>Concept:</strong> A futuristic digital identity for a technology business.</p>
+        <p style="margin-top:12px"><strong>Design direction:</strong> Bold typography, structured content, atmospheric purple visuals and clear product explanations.</p>
+        <p style="margin-top:12px"><strong>Design objective:</strong> Make complex product information easier to explore.</p>
+      </article>
+
+      <article class="card project-card reveal">
+        <div class="project-art two"></div>
+        <div class="project-type">Luxury concept</div>
+        <h3>Veloura</h3>
+        <p><strong>Concept:</strong> An elegant presentation for a premium lifestyle brand.</p>
+        <p style="margin-top:12px"><strong>Design direction:</strong> Editorial typography, restrained layouts and atmospheric imagery.</p>
+        <p style="margin-top:12px"><strong>Design objective:</strong> Create a consistent and refined brand presentation.</p>
+      </article>
+
+      <article class="card project-card reveal">
+        <div class="project-art three"></div>
+        <div class="project-type">Real estate concept</div>
+        <h3>Horizon</h3>
+        <p><strong>Concept:</strong> A property presentation experience.</p>
+        <p style="margin-top:12px"><strong>Design direction:</strong> Large visuals, organised property details and simple navigation.</p>
+        <p style="margin-top:12px"><strong>Design objective:</strong> Help visitors understand and explore property information.</p>
+      </article>
+
+      <article class="card project-card reveal">
+        <div class="project-art four"></div>
+        <div class="project-type">Creative studio concept</div>
+        <h3>Atelier</h3>
+        <p><strong>Concept:</strong> A distinctive website direction for a creative studio.</p>
+        <p style="margin-top:12px"><strong>Design direction:</strong> Expressive layouts, creative typography and visual contrasts.</p>
+        <p style="margin-top:12px"><strong>Design objective:</strong> Communicate personality and creative positioning.</p>
+      </article>
+    </div>
+
+    <div class="detail-block reveal" style="margin-top:35px">
+      <h3>How to understand this portfolio</h3>
+      <p>These are illustrative design concepts intended to communicate possible creative directions. They should not be interpreted as completed customer work, real client engagements or measurable business results.</p>
+    </div>
+    <div class="page-cta"><a class="btn btn-primary" href="#contact">Discuss a design direction ↗</a></div>
+  </div>
+</div>
+
+<!-- PROCESS PAGE -->
+<div class="page" id="process">
+  <div class="container page-hero">
+    <div class="eyebrow">Our process</div>
+    <h1>Every stage has <span class="gradient-text">a purpose.</span></h1>
+    <p class="section-intro">
+      A structured approach helps make responsibilities,
+      decisions and project expectations easier to understand.
+    </p>
+  </div>
+
+  <div class="container page-content">
+    <div class="timeline">
+      <div class="timeline-item reveal">
+        <div class="step-number">01</div>
+        <h3>Discovery and Understanding</h3>
+        <p>We begin by understanding the business, audience, current digital presence and project objectives. This is where requirements and important questions are identified.</p>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="step-number">02</div>
+        <h3>Planning and Structure</h3>
+        <p>We organise the website scope, page list, content requirements and intended visitor journeys. This stage helps establish what the project will include.</p>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="step-number">03</div>
+        <h3>Creative Direction and Design</h3>
+        <p>We explore visual style, typography, colours, layout and interactions. The purpose is to create a coherent direction that reflects the business.</p>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="step-number">04</div>
+        <h3>Development and Implementation</h3>
+        <p>The agreed design direction is translated into a working website. This may include responsive layouts, navigation and agreed interactive features.</p>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="step-number">05</div>
+        <h3>Review and Refinement</h3>
+        <p>The website is reviewed for content, layout, functionality and usability. Feedback is discussed and refinements are handled within the agreed scope.</p>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="step-number">06</div>
+        <h3>Launch and Handover</h3>
+        <p>The website is prepared for launch, with the agreed hosting, access and handover arrangements confirmed.</p>
+      </div>
+    </div>
+
+    <div class="grid detail-grid" style="margin-top:80px">
+      <div class="detail-block reveal">
+        <h3>What we need from clients</h3>
+        <p>Useful project inputs may include business information, service descriptions, brand assets, images, preferred website examples and feedback during the agreed review stages.</p>
+      </div>
+      <div class="detail-block reveal">
+        <h3>What should be agreed first?</h3>
+        <p>Project scope, pages, functionality, timeline, pricing, revisions, ownership and ongoing support should be clearly discussed before work begins.</p>
+      </div>
+    </div>
+    <div class="page-cta"><a class="btn btn-primary" href="#contact">Discuss your project ↗</a></div>
+  </div>
+</div>
+
+<!-- INSIGHTS PAGE -->
+<div class="page" id="insights">
+  <div class="container page-hero">
+    <div class="eyebrow">Insights and resources</div>
+    <h1>Understand the digital world <span class="gradient-text">more clearly.</span></h1>
+    <p class="section-intro">
+      Educational information about website planning,
+      design, usability and emerging digital technology.
+    </p>
+  </div>
+
+  <div class="container page-content">
+    <div class="grid detail-grid">
+      <div class="detail-block reveal">
+        <div class="project-type">Website strategy</div>
+        <h3>What makes a business website effective?</h3>
+        <p>A useful business website explains what the business does, who it serves and what visitors can do next. It should organise information so visitors can understand the offering without unnecessary confusion.</p>
+        <p style="margin-top:13px">Important considerations include clear messaging, appropriate navigation, relevant content, mobile usability and accessible contact information.</p>
+      </div>
+      <div class="detail-block reveal">
+        <div class="project-type">Redesign planning</div>
+        <h3>When should you consider a redesign?</h3>
+        <p>A website may need a new direction when its content no longer reflects the business, important information is difficult to find or the experience does not work comfortably on modern devices.</p>
+        <p style="margin-top:13px">A redesign should begin with identifying actual problems rather than changing the appearance without a clear reason.</p>
+      </div>
+      <div class="detail-block reveal">
+        <div class="project-type">User experience</div>
+        <h3>Why does navigation matter?</h3>
+        <p>Navigation helps visitors understand where they are and where they can go. Clear menus, descriptive page names and consistent layouts reduce unnecessary effort.</p>
+        <p style="margin-top:13px">The goal is to make the website easier to understand, not to add more menu options than necessary.</p>
+      </div>
+      <div class="detail-block reveal">
+        <div class="project-type">Responsive design</div>
+        <h3>Why should businesses think beyond desktop?</h3>
+        <p>Visitors use different devices. A responsive website considers how text, images, navigation and interactive elements behave at different screen sizes.</p>
+        <p style="margin-top:13px">Testing on mobile and tablet is an important part of reviewing a website experience.</p>
+      </div>
+      <div class="detail-block reveal">
+        <div class="project-type">AI and websites</div>
+        <h3>Where can AI fit into a website?</h3>
+        <p>AI may support conversational assistance, content discovery and other visitor interactions. Its usefulness depends on the quality of information, the task it performs and how it is integrated.</p>
+        <p style="margin-top:13px">A production AI assistant needs a secure backend, appropriate data handling and reliable service configuration.</p>
+      </div>
+      <div class="detail-block reveal">
+        <div class="project-type">Brand identity</div>
+        <h3>Why is design consistency important?</h3>
+        <p>Consistent colours, typography, imagery and tone help a website feel like one connected experience rather than a collection of unrelated pages.</p>
+        <p style="margin-top:13px">A visual system also makes future content and page additions easier to organise.</p>
+      </div>
+    </div>
+    <div class="page-cta"><a class="btn btn-primary" href="#contact">Ask about your website ↗</a></div>
+  </div>
+</div>
+
+<!-- CONTACT PAGE -->
+<div class="page" id="contact">
+  <div class="container page-hero">
+    <div class="eyebrow">Contact Northstar Digital</div>
+    <h1>Let's discuss your <span class="gradient-text">next idea.</span></h1>
+    <p class="section-intro">
+      Tell us about your business, your current website
+      and the digital experience you would like to create.
+    </p>
+  </div>
+
+  <div class="container page-content">
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="eyebrow">Get in touch</div>
+        <h2 style="font-size:32px">Start a conversation.</h2>
+        <p>
+          Whether you need a new website or want to rethink
+          an existing one, share some details and we can
+          discuss the next steps.
+        </p>
+        <div class="contact-detail"><strong>Email</strong><br><a href="mailto:team.northstar.digital@gmail.com">team.northstar.digital@gmail.com</a></div>
+        <div class="contact-detail"><strong>Agency</strong><br>Northstar Digital</div>
+        <div class="contact-detail"><strong>Leadership</strong><br>Saurabh Ghosh — CEO & Founder</div>
+        <div class="contact-detail"><strong>Market</strong><br>Worldwide</div>
+      </div>
+
+      <form class="contact-form reveal" id="contactForm">
+        <div class="eyebrow">Project enquiry</div>
+        <div class="form-row">
+          <div class="field"><label for="fullName">Your name *</label><input id="fullName" required placeholder="Your name"></div>
+          <div class="field"><label for="email">Email address *</label><input id="email" type="email" required placeholder="you@example.com"></div>
+        </div>
+        <div class="field"><label for="company">Business or company</label><input id="company" placeholder="Your business name"></div>
+        <div class="form-row">
+          <div class="field">
+            <label for="service">What do you need?</label>
+            <select id="service">
+              <option>Website design</option>
+              <option>Website redesign</option>
+              <option>Responsive website</option>
+              <option>UI / UX design</option>
+              <option>AI-powered website concept</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="budget">Estimated budget</label>
+            <select id="budget">
+              <option value="">Prefer to discuss</option>
+              <option>Under $500</option>
+              <option>$500–$1,000</option>
+              <option>$1,000–$3,000</option>
+              <option>$3,000+</option>
+            </select>
+          </div>
+        </div>
+        <div class="field"><label for="message">Tell us about your project *</label><textarea id="message" required placeholder="What would you like to create or improve?"></textarea></div>
+        <button class="btn btn-primary" type="submit">Prepare enquiry email ↗</button>
+        <p style="font-size:10px;color:var(--muted);margin-top:13px;line-height:1.7">This form prepares an email in your email application. It does not send automatically.</p>
+      </form>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="#home">
+          <span class="brand-mark">✦</span>
+          <span>NORTHSTAR DIGITAL<small>BEYOND THE ORDINARY</small></span>
+        </a>
+        <p>Modern websites and thoughtful digital experiences for ambitious businesses.</p>
+        <p style="margin-top:18px;color:#c2a6ec">Saurabh Ghosh<br>CEO & Founder</p>
+      </div>
+      <div><h4>Explore</h4><a href="#about">About</a><a href="#services">Services</a><a href="#industries">Industries</a><a href="#portfolio">Portfolio</a></div>
+      <div><h4>Discover</h4><a href="#process">Our process</a><a href="#insights">Insights</a><a href="#contact">Contact</a></div>
+      <div><h4>Connect</h4><a href="mailto:team.northstar.digital@gmail.com">Email our team</a><a href="#contact">Start a project</a></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Northstar Digital. All rights reserved.</span>
+      <span>Designed with intention. Built for people.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- NORTHSTAR AI ASSISTANT -->
+<button class="chat-launch" id="chatLaunch" aria-label="Open Northstar AI Assistant">✧</button>
+
+<div class="chat-panel" id="chatPanel">
+  <div class="chat-head">
+    ✦ Northstar AI Assistant
+    <small>Website assistant demonstration</small>
+  </div>
+  <div class="chat-messages" id="chatMessages">
+    <div class="chat-message">Hello! Welcome to Northstar Digital. How can I help you explore our company?</div>
+  </div>
+  <div class="chat-input">
+    <input id="chatInput" type="text" placeholder="Ask a question..." aria-label="Type your question">
+    <button id="chatSend" type="button">Send</button>
+  </div>
+</div>
+
+<script>
+/* ======================================
+   NORTHSTAR DIGITAL
+   CINEMATIC WEBSITE ENGINE
+====================================== */
+
+const pages=[
+  "home","about","services","industries",
+  "portfolio","process","insights","contact"
+];
+
+const navLinks=document.getElementById("navLinks");
+const menuToggle=document.getElementById("menuToggle");
+const scrollProgress=document.getElementById("scrollProgress");
+
+function showPage(pageName){
+  if(!pages.includes(pageName)) pageName="home";
+
+  document.querySelectorAll(".page").forEach(page=>{
+    page.classList.remove("active");
+  });
+
+  const selected=document.getElementById(pageName);
+  if(selected) selected.classList.add("active");
+
+  document.querySelectorAll(".nav-links a").forEach(link=>{
+    link.classList.toggle("active",link.dataset.route===pageName);
+  });
+
+  navLinks.classList.remove("open");
+  menuToggle.textContent="☰";
+
+  window.scrollTo({top:0,behavior:"instant"});
+
+  setTimeout(()=>{
+    initReveal();
+    updateProgress();
+  },100);
+}
+
+function handleRoute(){
+  const route=location.hash.replace("#","")||"home";
+  showPage(route);
+}
+
+window.addEventListener("hashchange",handleRoute);
+
+menuToggle.addEventListener("click",()=>{
+  navLinks.classList.toggle("open");
+  menuToggle.textContent=
+    navLinks.classList.contains("open")?"✕":"☰";
+});
+
+/* SCROLL PROGRESS */
+
+function updateProgress(){
+  const page=document.querySelector(".page.active");
+  if(!page) return;
+
+  const rect=page.getBoundingClientRect();
+  const pageHeight=page.scrollHeight;
+  const available=pageHeight-window.innerHeight;
+
+  const progress=available>0
+    ?Math.max(0,Math.min(1,window.scrollY/available))
+    :0;
+
+  scrollProgress.style.width=(progress*100)+"%";
+}
+
+window.addEventListener("scroll",()=>{
+  requestAnimationFrame(updateProgress);
+},{passive:true});
+
+/* CINEMATIC REVEAL ENGINE */
+
+let revealObserver;
+
+function initReveal(){
+  if(revealObserver) revealObserver.disconnect();
+
+  const elements=document.querySelectorAll(
+    ".page.active .reveal"
+  );
+
+  if(!("IntersectionObserver" in window)){
+    elements.forEach(el=>el.classList.add("visible"));
+    return;
+  }
+
+  revealObserver=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add("visible");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  },{
+    threshold:.12,
+    rootMargin:"0px 0px -40px 0px"
+  });
+
+  elements.forEach(el=>{
+    if(!el.classList.contains("visible")){
+      revealObserver.observe(el);
+    }
+  });
+}
+
+/* PARALLAX EFFECT */
+
+const heroVisual=document.getElementById("heroVisual");
+
+window.addEventListener("scroll",()=>{
+  if(!heroVisual) return;
+  if(window.innerWidth<720) return;
+
+  const movement=Math.min(window.scrollY,700);
+
+  heroVisual.style.transform=
+    `translate3d(0,${movement*.09}px,0) rotateY(${movement*.008}deg)`;
+},{passive:true});
+
+/* FAQ ACCORDION */
+
+document.querySelectorAll(".faq-question").forEach(question=>{
+  question.addEventListener("click",()=>{
+    const item=question.closest(".faq-item");
+    const wasOpen=item.classList.contains("open");
+
+    document.querySelectorAll(".faq-item").forEach(faq=>{
+      faq.classList.remove("open");
+      faq.querySelector(".faq-question span:last-child").textContent="+";
+    });
+
+    if(!wasOpen){
+      item.classList.add("open");
+      question.querySelector("span:last-child").textContent="−";
+    }
+  });
+});
+
+/* CONTACT FORM */
+
+document.getElementById("contactForm").addEventListener("submit",event=>{
+  event.preventDefault();
+
+  const name=document.getElementById("fullName").value.trim();
+  const email=document.getElementById("email").value.trim();
+  const company=document.getElementById("company").value.trim();
+  const service=document.getElementById("service").value;
+  const budget=document.getElementById("budget").value;
+  const message=document.getElementById("message").value.trim();
+
+  if(!name||!email||!message){
+    alert("Please complete the required fields.");
+    return;
+  }
+
+  const subject=encodeURIComponent(
+    "New Project Enquiry - Northstar Digital"
+  );
+
+  const body=encodeURIComponent(
+`Hello Northstar Digital,
+
+I would like to discuss a project.
+
+Name: ${name}
+Email: ${email}
+Business: ${company||"Not provided"}
+Service: ${service}
+Budget: ${budget||"To be discussed"}
+
+Project details:
+${message}
+
+Regards,
+${name}`
+  );
+
+  window.location.href=
+    `mailto:team.northstar.digital@gmail.com?subject=${subject}&body=${body}`;
+});
+
+/* AI ASSISTANT DEMONSTRATION */
+
+const chatPanel=document.getElementById("chatPanel");
+const chatMessages=document.getElementById("chatMessages");
+const chatInput=document.getElementById("chatInput");
+const chatSend=document.getElementById("chatSend");
+
+function toggleChat(forceOpen){
+  const shouldOpen=typeof forceOpen==="boolean"
+    ?forceOpen
+    :!chatPanel.classList.contains("show");
+
+  chatPanel.classList.toggle("show",shouldOpen);
+
+  if(shouldOpen){
+    setTimeout(()=>chatInput.focus(),100);
+  }
+}
+
+document.getElementById("chatLaunch").addEventListener(
+  "click",()=>toggleChat()
+);
+
+function addChatMessage(message,sender){
+  const bubble=document.createElement("div");
+  bubble.className=
+    "chat-message "+(sender==="user"?"user":"");
+  bubble.textContent=message;
+  chatMessages.appendChild(bubble);
+  chatMessages.scrollTop=chatMessages.scrollHeight;
+}
+
+function getAssistantReply(message){
+  const text=message.toLowerCase();
+
+  if(text.includes("founder")||text.includes("ceo")||text.includes("saurabh")){
+    return "Saurabh Ghosh is the CEO and Founder of Northstar Digital. He is building an international digital agency focused on modern websites and AI-powered solutions.";
+  }
+
+  if(text.includes("vision")||text.includes("mission")){
+    return "Our vision is to build a respected digital agency known for thoughtful website experiences, creative problem-solving and a forward-looking approach to technology.";
+  }
+
+  if(text.includes("service")||text.includes("design")||text.includes("redesign")){
+    return "Our service areas include website design, website redesign, responsive design, UI and UX thinking, digital experiences and AI-powered concepts.";
+  }
+
+  if(text.includes("price")||text.includes("cost")||text.includes("budget")){
+    return "Project pricing depends on pages, design complexity, functionality and project scope. Please use our Contact page to discuss your requirements.";
+  }
+
+  if(text.includes("process")||text.includes("how do you work")){
+    return "Our proposed process has six stages: Discover, Plan, Design, Build, Review and Launch. See our Process page for detailed explanations.";
+  }
+
+  if(text.includes("industry")||text.includes("business")){
+    return "We explore website solutions for technology, real estate, healthcare, education, e-commerce, professional services, hospitality and startups.";
+  }
+
+  if(text.includes("portfolio")||text.includes("project")||text.includes("work")){
+    return "Our Portfolio page contains illustrative design concepts. They demonstrate creative directions rather than completed client projects.";
+  }
+
+  if(text.includes("contact")||text.includes("email")){
+    return "You can contact our team at team.northstar.digital@gmail.com or use the project enquiry form on our Contact page.";
+  }
+
+  if(text.includes("ai")||text.includes("assistant")){
+    return "This is currently a website assistant demonstration with sample responses. A live AI assistant requires a secure backend and an AI provider.";
+  }
+
+  if(text.includes("hello")||text.includes("hi")||text.includes("hey")){
+    return "Hello! Welcome to Northstar Digital. Are you interested in a new website or improving an existing one?";
+  }
+
+  return "Thank you for your question. I can explain basic information about Northstar Digital, our services and our process. For a detailed project discussion, email team.northstar.digital@gmail.com.";
+}
+
+function sendChatMessage(){
+  const message=chatInput.value.trim();
+  if(!message) return;
+
+  addChatMessage(message,"user");
+  chatInput.value="";
+
+  setTimeout(()=>{
+    addChatMessage(
+      getAssistantReply(message),
+      "assistant"
+    );
+  },450);
+}
+
+chatSend.addEventListener("click",sendChatMessage);
+
+chatInput.addEventListener("keydown",event=>{
+  if(event.key==="Enter") sendChatMessage();
+});
+
+/* STAR PARTICLES */
+
+const hero=document.querySelector(".hero-visual");
+
+if(hero){
+  for(let i=0;i<22;i++){
+    const particle=document.createElement("span");
+    particle.className="star";
+    particle.style.left=Math.random()*95+"%";
+    particle.style.top=Math.random()*95+"%";
+    particle.style.animationDelay=Math.random()*3+"s";
+    hero.appendChild(particle);
+  }
+}
+
+/* FOOTER YEAR */
+
+document.getElementById("year").textContent=
+  new Date().getFullYear();
+
+/* INITIALIZATION */
+
+handleRoute();
+initReveal();
+updateProgress();
+
+</script>
+</body>
+</html>
